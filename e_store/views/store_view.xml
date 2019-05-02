@@ -9,6 +9,7 @@
                         <group>
                             <field name="name"/>
                             <field name="store_addres" />
+                             <field name="store_rent" />
                         </group>
                         <group>
                             <field name="prod_name"/>
@@ -47,9 +48,11 @@
                             <field name="name"/>
                             <field name="store_addres" />
                             <field name="prod_name"/>
+                            <field name="prod_code"/>
                             <field name="prod_ex_date" />
                             <field name="prod_category" />
                             <field name="keeper_id"/>
+                             <field name="store_rent" />
                 </tree>
             </field>
         </record>

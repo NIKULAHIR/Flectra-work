@@ -9,16 +9,19 @@
                         <group>
                             <field name="name"/>
                             <field name="designation" />
+                            <field name="prod_category"/>
 
+                             <field name="totle_stores"/>
                         </group>
+
 
                         <group name="store_line">
                             <label for="store_line" string="Store details"/>
                             <field name="store_line" widget="One2many" nolabel="1">
                                 <tree string="Values" editable="bottom">
                                      <field name="name"/>
-                                     <field name="store_addres"/>
                                      <field name="prod_category"/>
+
                                 </tree>
                             </field>
                         </group>
@@ -38,6 +41,7 @@
                             <field name="name"/>
                             <field name="designation" />
 
+
                 </tree>
             </field>
         </record>
@@ -50,7 +54,7 @@
 
         </record>
 
-        <menuitem id="store_keeper_info" name="Store Keeper" action="action_store_keeper"
+        <menuitem id="store_keeper_infomation" name="Store Keeper" action="action_store_keeper"
                   parent="store_root_deatils"/>
 
 

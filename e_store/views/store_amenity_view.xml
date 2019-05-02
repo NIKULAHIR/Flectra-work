@@ -9,6 +9,10 @@
                         <group>
                             <field name="name"/>
                             <field name="quantity"/>
+                            <field name="totle_stores"/>
+                        </group>
+                        <group>
+                            <button name="count_stores" type="object" string="Count stores"/>
                         </group>
 
                         <group name="store_ids">
