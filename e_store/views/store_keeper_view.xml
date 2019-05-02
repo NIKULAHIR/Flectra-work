@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="store_keeper_form_view" model="ir.ui.view">
+                <field name="name">store keeper form view</field>
+                <field name="model">store.keeper</field>
+                <field name="arch" type="xml">
+                    <form string="Store Keeper Information" >
+                        <group>
+                            <field name="name"/>
+                            <field name="designation" />
+
+                        </group>
+
+                        <group name="store_line">
+                            <label for="store_line" string="Store details"/>
+                            <field name="store_line" widget="One2many" nolabel="1">
+                                <tree string="Values" editable="bottom">
+                                     <field name="name"/>
+                                     <field name="store_addres"/>
+                                     <field name="prod_category"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="store_keeper_list_view" model="ir.ui.view">
+            <field name="name">store keeper list view</field>
+            <field name="model">store.keeper</field>
+            <field name="arch" type="xml">
+                <tree string="store Keeper Information">
+
+                            <field name="name"/>
+                            <field name="designation" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_store_keeper" model="ir.actions.act_window">
+            <field name="name">E_store keeper</field>
+            <field name="res_model">store.keeper</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <menuitem id="store_keeper_info" name="Store Keeper" action="action_store_keeper"
+                  parent="store_root_deatils"/>
+
+
+
+
+
+
+    </data>
+</flectra>
