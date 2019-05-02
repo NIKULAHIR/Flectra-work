@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="store_amenity_form_view" model="ir.ui.view">
+                <field name="name">store amenity form view</field>
+                <field name="model">store.amenity</field>
+                <field name="arch" type="xml">
+                    <form string="Store Amenity Information" >
+                        <group>
+                            <field name="name"/>
+                            <field name="quantity"/>
+                        </group>
+
+                        <group name="store_ids">
+                            <label for="store_ids" string="Store details"/>
+                            <field name="store_ids" widget="Many2many" nolabel="1">
+                                <tree string="Values" editable="bottom">
+                                     <field name="name"/>
+                                     <field name="store_addres"/>
+                                     <field name="prod_name"/>
+                                     <field name="prod_category"/>
+                                </tree>
+                            </field>
+                         </group>
+
+
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="store_amenity_list_view" model="ir.ui.view">
+            <field name="name">store amenity list view</field>
+            <field name="model">store.amenity</field>
+            <field name="arch" type="xml">
+                <tree string="store Amenity Information">
+
+                            <field name="name"/>
+                            <field name="quantity" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_store_amenity" model="ir.actions.act_window">
+            <field name="name">E_store amenity</field>
+            <field name="res_model">store.amenity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+        <menuitem id="store_amenity_info" name="Store Amenity" action="action_store_amenity"
+                  parent="store_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>

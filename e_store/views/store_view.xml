@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="store_form_view" model="ir.ui.view">
+                <field name="name">store form view</field>
+                <field name="model">store.data</field>
+                <field name="arch" type="xml">
+                    <form string="Store Information" >
+                        <group>
+                            <field name="name"/>
+                            <field name="store_addres" />
+                        </group>
+                        <group>
+                            <field name="prod_name"/>
+                            <field name="prod_code"/>
+                            <field name="prod_pkg_date"/>
+                            <field name="prod_ex_date" />
+                        </group>
+                        <group>
+                            <field name="is_prod_ex"/>
+                            <field name="prod_category" />
+                            <field name="keeper_id"/>
+
+                        </group>
+
+                        <group name="amenity_ids">
+                            <label for="amenity_ids" string="Store anmenitys"/>
+                            <field name="amenity_ids" widget="One2many" nolabel="1">
+                                <tree string="Values" editable="bottom">
+                                     <field name="name"/>
+
+                                </tree>
+                            </field>
+                        </group>
+                    </form>
+                </field>
+
+        </record>
+
+
+        <record id="store_list_view" model="ir.ui.view">
+            <field name="name">store list view</field>
+            <field name="model">store.data</field>
+            <field name="arch" type="xml">
+                <tree string="store Information">
+
+                            <field name="name"/>
+                            <field name="store_addres" />
+                            <field name="prod_name"/>
+                            <field name="prod_ex_date" />
+                            <field name="prod_category" />
+                            <field name="keeper_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_store_data" model="ir.actions.act_window">
+            <field name="name">E_store</field>
+            <field name="res_model">store.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="store_data_search_view" model="ir.ui.view" >
+            <field name="name">StoreData.search</field>
+            <field name="model">store.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="prod_name"/>
+                    <field name="prod_code"/>
+                    <field name="prod_category"/>
+                     <field name="store_addres"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="store_data_view_calendar_" model="ir.ui.view">
+                <field name="name">StoreData</field>
+                <field name="model">store.data</field>
+                <field name="arch" type="xml">
+                    <calendar string="Session Calendar" date_start="prod_ex_date" >
+                        <field name="name"/>
+                        <field name="prod_name"/>
+                    </calendar>
+                </field>
+            </record>
+
+         <record model="ir.actions.act_window" id="action_store_calendar">
+            <field name="name">StoreData</field>
+            <field name="res_model">store.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+
+
+
+
+
+        <menuitem id="store_root" name="E_store"/>
+        <menuitem id="store_root_deatils" name="Store Details" parent="store_root"/>
+        <menuitem id="store_data_info" name="Stores" action="action_store_calendar"
+                  parent="store_root_deatils"/>
+
+
+
+
+    </data>
+</flectra>
